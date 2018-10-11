@@ -20,6 +20,18 @@ public class H2Config {
     @Value("${spring.datasource.driver-class-name}")
     private String driverClass;
 
+    @Value("${spring.datasource.testWhileIdle:true}")
+    private boolean testWhileIdle;
+
+    @Value("${spring.datasource.validationQuery:SELECT 1}")
+    private String validationQuery;
+
+    @Value("${spring.datasource.testOnBorrow:false}")
+    private boolean testOnBorrow;
+
+    @Value("${spring.datasource.testOnReturn:false}")
+    private boolean testOnReturn;
+
     @Bean(name = "dataSource")
     public DataSource dataSource() {
         DruidDataSource druidDataSource = new DruidDataSource();
@@ -29,6 +41,10 @@ public class H2Config {
         druidDataSource.setPassword(password);
         druidDataSource.setInitialSize(2);
         druidDataSource.setMaxActive(2);
+        druidDataSource.setTestWhileIdle(testWhileIdle);
+        druidDataSource.setTestOnBorrow(testOnBorrow);
+        druidDataSource.setTestOnReturn(testOnReturn);
+
         return druidDataSource;
     }
 

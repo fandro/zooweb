@@ -26,7 +26,7 @@
     </appenders>
     <loggers>
         <!--建立一个默认的root的logger-->
-        <root level="info">
+        <root level="debug">
             <appender-ref ref="ErrorRollingFile"/>
             <appender-ref ref="InfoRollingFile"/>
             <appender-ref ref="Console"/>
