@@ -226,6 +226,7 @@ function doData(path, cacheId) {
             console.log(data);
             $("#r_path").val(data.path);
             $("#r_cacheId").val(data.cacheId);
+            $("#r_pname").text(decodeURIComponent(decodeURIComponent(data.path)));
             $("#r_data").val(data.data);
             $("#r_czxid").text(data.arr.czxid);
             $("#r_mzxid").text(data.arr.mzxid);

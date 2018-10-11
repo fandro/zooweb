@@ -32,6 +32,7 @@ body {
                 console.log(data);
                 $("#r_path").val(data.path);
                 $("#r_cacheId").val(data.cacheId);
+                $("#r_pname").text(decodeURIComponent(decodeURIComponent(data.path)));
                 $("#r_data").val(data.data);
                 $("#r_czxid").text(data.arr.czxid);
                 $("#r_mzxid").text(data.arr.mzxid);
@@ -78,6 +79,10 @@ body {
     <input id = "r_cacheId" type="hidden" value="${cacheId}" name="cacheId" />
 	<div>
 		<table id = "r_table">
+			<tr>
+				<td><label >name：</label></td>
+				<td id="r_pname"></td>
+			</tr>
 			<tr>
 				<td><label >data：</label></td>
 				<td>
